@@ -1,0 +1,119 @@
+########################################################################################################################## 
+##### Settings file for ProteinEvolverABC 
+##### Estimation of recombination and substitution rates in proyein sequences by approximate Bayesian computation 
+##### Arenas, M. 
+##### (c) 2020 
+##### Contact*: miguelmmmab@gmail.com or marenas@uvigo.es 
+##### 
+##### Parameters with an "*" are mandatory (need to be specified) 
+##### Text with an "#" is not read. Parameter values must be introduced immediately after the "=" 
+########################################################################################################################## 
+ 
+# File printed by - ProteinEvolverABC_GUI - 
+# Date: 2020/sep/20 00:02:38 
+# 
+ 
+######################################### 
+### Settings for the simulation phase ### 
+######################################### 
+ 
+### Prior distributions available: fix #, uniform # #, gamma # # (t) # #, beta # # (t) # #, normal # # (t) # #, exponential # (t) # #, dirichlet n# 
+### (t) indicates that the distribution can be truncated through the following two (lowest highest) values 
+### Each parameter may have a particular set of available distributions (indicated for each parameter) 
+### 
+###  +----------------+----------------------------------------------------------------------+-----------------------+------------------------------------------------------------+ 
+###  |  Distribution  |  Description                                                         |  Truncated (low high) |  Examples                                                  | 
+###  +----------------+----------------------------------------------------------------------+-----------------------+------------------------------------------------------------+ 
+###  |  fix           |  Fixed value (integer or non integer)                                |  n.a.                 |  fix 4; fix 0.7                    		                 | 
+###  |  uniform       |  Random between two values (integer or non integer; lowest, highest) |  n.a.                 |  uniform 1.0e-8 1.0e-5; ; unif 2 6                         | 
+###  |  normal        |  Normal distribution (mean, sd)                                      |  t # #                |  normal 1.0e-8 1.0e-5; norm 1.0e-8 1.0e-5 t 1.0e-9 1.0e-6  | 
+###  |  exponential   |  Exponential distribution (rate)                                     |  t # #                |  exponential 1.0e-8; exp 1.0e-8 t 1.0e-9 1.0e-6            | 
+###  |  gamma         |  Gamma distribution (shape, rate "1/scale")                          |  t # #                |  gamma 1.0e-7 5.0e-7; gamma 1.0e-7 5.0e-7 t 5.0e-8 1.0e-6  | 
+###  |  beta          |  Beta  distribution (shape1, shape2)                                 |  t # #                |  beta 1.0e-7 5.0e-7; beta 1.0e-7 5.0e-7 t 1.1e-8 1.0e-6    | 
+###  |  dirichlet     |  Dirichlet distribution: alpha (vector)                              |  n.a.                 |  dirichlet 1 1 1 1; dirichlet 1 1 1 1 1 1                  | 
+###  +----------------+----------------------------------------------------------------------+-----------------------+------------------------------------------------------------+ 
+### 
+ 
+### Target MSA file ###		# phylip format, see documentation for details 
+*NameOfPhylipFile=00INPUT000000001.phy
+ 
+### Total number of simulations ### 
+*NumberOfSimulations=200
+ 
+# Consideration of indels. 0 (Indels are ignored), 1 (Indels are considered as a new state)
+*Indels=0
+ 
+# Number of available processors to run the simulations in parallel. 1 by default 
+NumberOfProcessors=1
+ 
+# Save simulated data. 0 (No), 1 (Yes, but it requires space in the disk) 
+*SaveSimulations=0
+ 
+# Show running information (simulations and summary statistics) on the screen. 0 (No), 1 (Yes, but it slows down the running time) 
+*ShowInformationScreen=0
+ 
+ 
+### Demographic settings ###
+# Haploid or Diploid data (haploid=1, diploid=2)
+*Haploid/Diploid=2
+ 
+# Population size (i.e., 1000)
+*PopulationSize=1000 
+ 
+# Logitudinal sampling. Requires GenerationTime. See documentation for details 
+#DatedTips=4 1995 1 10 2003 11 16 1997 17 26 2001 27 29
+ 
+# Generation time. fix, uniform; i.e., uniform 500 1000 
+#GenerationTime=fix 1200
+ 
+#Recombination rate per site. fix, uniform, gamma, beta, normal, exponential; i.e., gamma 0.02 0.5 t 1.3e-07 9.3e-07. -PARAMETER TO BE ESTIMATED-
+*RecombinationRate=uniform 0 3.0e-6
+
+
+### Protein substitution model settings ###
+#Amino acid substitution rate. fix, uniform, gamma, beta, normal, exponential; i.e., fix 7.0e-6. -PARAMETER TO BE ESTIMATED-
+*SubstitutionRate=uniform 9.1e-5 4.0e-4
+
+# Substitution model of protein evolution
+*SubstitutionModel=JTT
+
+# Amino acid frequencies. 1x20, fix or dirichlet. By default equally distributed frequencies; i.e., fix 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05
+#AminoacidFrequencies=fix 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05
+
+# Rate of heteregeneity across amino acid sites, +G. fix, uniform, gamma, beta, normal, exponential; i.e., fix 0.6
+#RateHetSites=uniform 0.76 0.90
+
+# Proportion of invariable amino acid sites, +I. fix, uniform, gamma, beta, normal, exponential; i.e., exponential 0.002 t 0 1.0
+#PropInvSites=uniform 0.3 0.5
+
+
+
+#########################################
+### Settings for the estimation phase ###
+#########################################
+
+### ABC settings ###
+#ABC iterations. Number of simulations to consider (Iterations <= NumberOfSimulations)
+*ABCIterations=200
+
+#ABC tolerance. Number of simulations clostest to real data to retain in the ABC procedure (Tolerance < NumberOfSimulations)
+*ABCTolerance=100
+
+#ABC method (rejection, loclinear). See documentation for details
+*ABCMethod=loclinear
+
+#ABC transformation (none, log, logit). See documentation for details
+*ABCTransf=logit
+
+#ABC correction. Correct for heteroscedastic variance (no=0, yes=1). See documentation for details
+*ABCHCorr=0
+
+#Summary statistics to use. See documentation for details
+*SummaryStatistics= 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+
+### Graphical settings ###
+#Multiple pages. PDF documents with multiple pages (no=0, yes=1)
+*MultiPage=1
+
+
+
