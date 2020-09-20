@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>ProteinEvolverABC README</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="824.48">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 16.0px 0.0px; font: 24.0px Times}
+    p.p2 {margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times}
+    p.p3 {margin: 0.0px 0.0px 6.0px 0.0px; font: 12.0px Times; min-height: 14.0px}
+    p.p4 {margin: 0.0px 0.0px 14.0px 0.0px; font: 18.0px Times}
+    p.p5 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; min-height: 14.0px}
+    p.p9 {margin: 0.0px 0.0px 14.0px 0.0px; font: 18.0px Courier}
+    p.p10 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Courier}
+    p.p11 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Courier; min-height: 14.0px}
+    span.s1 {text-decoration: underline ; color: #002cd6}
+  </style>
+</head>
+<body>
+<h1 style="margin: 0.0px 0.0px 16.0px 0.0px; font: 24.0px Times"><b>ProteinEvolverABC1.0 README</b></h1>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times"><b>September 1, 2020</b></h3>
+<p class="p3"><br></p>
+<h2 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 18.0px Times"><b>Purpose</b></h2>
+<p class="p7">ProteinEvolverABC estimates recombination and substitution rates from alignments of protein sequences by approximate Bayesian computation (ABC).</p>
+<p class="p7">The file <i>ProteinEvolverABC1.0.manual.pdf</i> includes detailed documentation, and the user is strongly advised to read it carefully before using the program.</p>
+<br>
+<h2 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 18.0px Times"><b>Download</b></h2>
+<p class="p7">Download the program from <a href="https://github.com/MiguelArenas/proteinevolverabc/"><span class="s1">https://github.com/MiguelArenas/proteinevolverabc/</span></a>. Open a console window. In the same directory as the file <i>ProteinEvolverABC1.0.zip</i>, type:</p>
+<p class="p7">unzip ProteinEvolverABC1.0.zip</p>
+<p class="p7">Note that this zip file is built on a macintosh, so in other OS you might see some strange files, that start with "." or "-". These are macintosh hidden files, which can be safely removed without affecting the software.</p>
+<br>
+<h2 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 18.0px Times"><b>Compilation</b></h2>
+<p class="p7">The program should compile without much problem in any Unix-like environment (Linux, MacOSX, etc.). A <i>makefile</i> is provided for the <i>gcc</i> compiler, but if you have <i>cc</i> instead, just change <i>gcc</i> for <i>cc</i> in the makefile. The default optimization level is set to <i>-O3</i>. To compile in macintosh with an intel processor, and probably in othe machines, you can enable the option <i>-fast</i> instead.</p>
+<p class="p7">To compile the program move into <i>ProteinEvolverABC2.0.0</i> folder and type:</p>
+<p class="p7"><i>make all</i></p>
+<p class="p8"><br></p>
+<p class="p7">ProteinEvolverABC also requires the installation of Perl and R (with the libraries: "lattice", "MCMCpack", "ape", "graphics" and "abc")</p>
+<p class="p7">Folders "source" and "scripts" must not be modified</p>
+<br>
+<h2 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 18.0px Times"><b>Execution</b></h2>
+<p class="p7">The program runs on the command-line Unix-like window. In MacOS X or Linux the user needs to open the Terminal application.</p>
+<p class="p7">The execution consists of 4 consecutive steps. To run it move to the folder where the main files are located and type:</p>
+<p class="p8"><br></p>
+<p class="p7"><i>perl ProteinEvolverABC_Phase1.pl PATH/Settings.txt</i></p>
+<p class="p8"><br></p>
+<p class="p7"><i>perl ProteinEvolverABC_Phase2.pl PATH/Settings.txt</i></p>
+<p class="p8"><br></p>
+<p class="p7"><i>perl ProteinEvolverABC_Phase3.pl PATH/Settings.txt</i></p>
+<p class="p8"><br></p>
+<p class="p7"><i>perl ProteinEvolverABC_Phase4.pl PATH/Settings.txt</i></p>
+<p class="p8"><br></p>
+<p class="p7">Where "Settings.txt" is the main input file with the user-specified settings placed in the directory <i>PATH</i></p>
+<p class="p7">The execution of "ProteinEvolverABC_Phase2.pl" (simulation of multiple alignments of protein sequences) can, optionally, run in parallel under a user-specified number of processors </p>
+<p class="p7"><br></p>
+<p class="p7">REMEMBER:</p>
+<p class="p7">- The structure of the package ProteinEvolverABC must not be changed, particularly, folders "source" and "scripts"</p>
+<p class="p7">- ProteinEvolverABC must run from the folder where the main files are located</p>
+<p class="p7">- The target sequences alignment file must be located in the folder of the "Settings.txt" file</p>
+<p class="p7">- Read the software documentation before using the program</p>
+
+<p class="p11"><br></p>
+<h2 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 18.0px Times"><b>Disclaimer</b></h2>
+<p class="p7"></p>
+<p class="p7">ProteinEvolverABC © 2020<span class="Apple-converted-space"> </span></p>
+<p class="p8"><br></p>
+<p class="p7"><i>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later<span class="Apple-converted-space"> </span></i></p>
+<p class="p7"><i>version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.</i></p>
+<p class="p8"><br></p>
+<p class="p7">Miguel Arenas<span class="Apple-converted-space"> </span>- miguelmmmab@gmail.com / marenas@uvigo.es</p>
+<p class="p8"><br></p>
+</body>
+</html>
