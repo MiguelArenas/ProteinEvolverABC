@@ -1,0 +1,99 @@
+##########################################################################################################################
+##### Settings file for ProteinEvolverABC
+##### Estimation of recombination and substitution rates in protein sequences by approximate Bayesian computation
+##### Miguel Arenas 
+##### (c) 2020
+##### Contact: marenas@uvigo.es / miguelmmmab@gmail.com
+##### 
+##### Parameters with an "*" are mandatory (need to be specified)
+##### Text with an "#" is not read. Parameter values must be introduced immediately after the "="
+##########################################################################################################################
+
+#########################################
+### Settings for the simulation phase ###
+#########################################
+### Priot distributions available: fix #, uniform # #, gamma # # (t) # #, beta # # (t) # #, normal # # (t) # #, exponential # (t) # #, dirichlet n#
+### (t) indicates that the distribution can be truncated through the following two (lowest highest) values.
+
+
+### Target alignment file ###		# phylip format, see documentation for details
+*NameOfPhylipFile=ProtSeq1.phy
+
+
+### Total number of simulations ###
+*NumberOfSimulations=250
+
+# Consideration of indels. 0 (indels are ignored), 1 (indels are considered as a new state)
+*Indels=0
+
+# Number of available processors to run the simulations in parallel. 1 by default
+NumberOfProcessors=1
+
+# Save simulated data. 0 (No), 1 (Yes, but it requires space in the disk)
+*SaveSimulations=0
+
+# Show running information (simulations and summary statistics) on the screen. 0 (No), 1 (Yes, but it slows down the running time)
+*ShowInformationScreen=0
+
+
+### Demographic settings ###
+# Haploid or Diploid data (haploid=1, diploid=2)
+*Haploid/Diploid=2
+
+# Population size (i.e., 1000)
+*PopulationSize=1000		
+
+# Logitudinal sampling. Requires GenerationTime. See documentation for details
+#DatedTips=4 1995 1 10 2003 11 16 1997 17 26 2001 27 29
+
+# Generation time. fix, uniform; i.e., uniform 500 1000
+#GenerationTime=fix 1200
+
+# Recombination rate per site. fix, uniform, gamma, beta, normal, exponential; i.e., gamma 0.02 0.5 t 1.3e-07 9.3e-07. -PARAMETER TO BE ESTIMATED-
+*RecombinationRate=uniform 0 5.56e-6
+
+
+### Protein substitution model settings ###
+# Amino acid substitution rate. i.e., fix 7.0e-6. -PARAMETER TO BE ESTIMATED-
+*SubstitutionRate=uniform 0 1.67e-4
+
+# Model of amino acid substitution (i.e., Blosum62, CpRev, Dayhoff, DayhoffDCMUT, HIVb, HIVw, JTT, JonesDCMUT, LG, Mtart, Mtmam, Mtrev24, RtRev, VT, WAG, UserEAAM)
+*SubstitutionModel=JTT
+
+# Amino acid frequencies. fix or dirichlet. By default equally distributed frequencies. i.e., dirichlet 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+*AminoacidFrequencies=fix 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05
+
+# Rate of heteregeneity across sites, +G. fix, uniform, gamma, beta, normal, exponential; i.e., fix 0.6
+#RateHetSites=uniform 0.76 0.90
+
+# Proportion of invariable sites, +I. fix, uniform, gamma, beta, normal, exponential; i.e., exponential 0.002 t 0 1.0
+#PropInvSites=uniform 0.3 0.5
+
+
+#########################################
+### Settings for the estimation phase ###
+#########################################
+
+### ABC settings ###
+#ABC iterations. Number of simulations to consider (Iterations <= NumberOfSimulations)
+*ABCIterations=250
+
+#ABC tolerance. Number of simulations clostest to real data to retain in the ABC procedure (Tolerance < NumberOfSimulations)
+*ABCTolerance=50
+
+#ABC method (rejection, loclinear). See documentation for details
+*ABCMethod=loclinear
+
+#ABC transformation (none, log, logit). See documentation for details
+*ABCTransf=logit
+
+#ABC correction. Correct for heteroscedastic variance (no=0, yes=1). See documentation for details
+*ABCHCorr=0
+
+#Summary statistics to use. See documentation for details
+*SummaryStatistics= 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+
+### Graphical settings ###
+#Multiple pages. PDF documents with multiple pages (no=0, yes=1)
+*MultiPage=1
+
