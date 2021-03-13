@@ -8,4 +8,4 @@ The package is implemented in C, perl and R and can run on Linux and Mac OS. It 
 
 The package includes detailed documentation (which is advised to read before using the program) and practical examples.
 
-Miguel Arenas. 2020. miguelmmmab@gmail.com - marenas@uvigo.es
+Miguel Arenas. 2020-2021. miguelmmmab@gmail.com - marenas@uvigo.es
