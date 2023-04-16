@@ -8,6 +8,7 @@ The package is implemented in C, perl and R and can run on Linux and Mac OS. It 
 
 The package includes detailed documentation (which is advised to read before using the program) and practical examples.
 
+Citation:
 Arenas M. 2022. ProteinEvolverABC: Coestimation of Recombination and Substitution Rates in Protein Sequences by approximate Bayesian computation. Bioinformatics, 38(1), 58–64.
 
 Miguel Arenas. 2021-2022. miguelmmmab@gmail.com - marenas@uvigo.es
