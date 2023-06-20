@@ -8,6 +8,8 @@ The package is implemented in C, perl and R and can run on Linux and Mac OS. It 
 
 The package includes detailed documentation (which is advised to read before using the program) and practical examples.
 
+This work was supported by the Spanish Ministry of Economy and Competitiveness and Ministry of Science and Innovation through the Grants [RYC-
+2015-18241] and [PID2019-107931GA-I00/AEI/10.13039/501100011033] to MA.
 
 Citation:
 
