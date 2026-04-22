@@ -1,4 +1,4 @@
-# ProteinEvolverABC
+# ProteinEvolverABC2
 Estimation of Recombination and Substitution rates in alignments of protein sequences by approximate Bayesian computation
 
 The package ProteinEvolverABC is a computer framework to estimate recombination and substitution rates in multiple alignments of protein sequences by approximate Bayesian computation. The framework is based on a special version of the simulator ProteinEvolver that implements the coalescent with recombination (including a variety of migration models, demographics and user-specified populations/species trees) and protein evolution under diverse substitution models. A total of 20 summary statistics can be computed from the alignments collecting information about the evolutionary process. Then, ProteinEvolverABC can estimate the parameters under approximate Bayesian computation (ABC) through the rejection and regression methods.
