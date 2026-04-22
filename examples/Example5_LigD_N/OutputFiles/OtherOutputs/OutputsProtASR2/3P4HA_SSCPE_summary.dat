@@ -1,0 +1,24 @@
+# PDB= "3P4HA" L_seq=118 DG_wt= -23.6 /L= -0.200 hydro= 0.127
+# 118 residues in PDB sequence, 108 structured 10 disordered
+# Loc.interactions: 0.000 T= 0.50 SC=0.065 SU= 0.065 REM= 2 T_freezing= 1.41
+# 134 stable aligned sequences read in file RealData.fas Mean DG: -15.42
+# PDB seq in MSA: 1
+# Mapping written in 3P4HA_RealData.map
+# Mean seq. identity between PDB seq and MSA: 0.443
+# 0 columns in MSA, 10 PDB res. do not have associated col.
+# MSA profiles regularized as f_ia=(n(MSA_ia)+REG*f_a)/N  initial REG=0.000
+# Entropy per site of the alignment: 1.123
+# Regularized entropy per site: nan
+# Lambda is obtained maximizing log(likelihood)-Reg*Lambda^2
+# Lambda determined by solving for zero derivative
+# Fix regularization parameter Reg = 0
+# KL(Reg.obs,mod): -likelihood(Reg|model)-Entropy(Reg)
+# KL(mod,Reg.obs): -likelihood(model|Reg)-Entropy(mod)
+# Global a.a. frequencies computed from mutation model optimized from the data
+# Nucleotide frequencies:  A 0.271 T 0.218 G 0.302 C 0.208 trasition-transversion ratio: 1.000 CpG ratio: 2.000Double nucleotide mutations: 0.000
+# Number of free parameters: 4+1
+# Adopted substitution matrix: JTT
+# Model Lambda0 Lambda1 lik(MSA) KL(mod,reg.obs) KL(reg.obs,mod) -score KL(mod,mut) entropy(mod) DG Tf h
+mut	0.0000	0.0000	-2.840	1.717	inf	inf	0.000	2.844	19.9	1.94	0.122
+WT	0.8135	0.0000	-2.704	1.581	inf	inf	0.138	2.686	-46.3	2.02	0.128
+nat	0.7500	0.0000	-18.181	5.695	inf	inf	2199582269359346990186496.000	0.131	0.0	0.00	0.175

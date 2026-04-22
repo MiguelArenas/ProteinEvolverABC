@@ -1,0 +1,19 @@
+Mutation parameters (DNA): A T G C tt_ratio kCpG twonuc
+0 mutation parameters, l= -13.5675 AIC= 3201.9   Mut_par:  0.250 0.250 0.250 0.250 1.000 1.000 0.000
+3 mutation parameters, l= -10.9206 AIC= 2583.3   Mut_par:  0.281 0.227 0.292 0.201 1.000 1.000 0.000
+4 mutation parameters, l= -10.0223 AIC= 2373.3   Mut_par:  0.271 0.218 0.302 0.208 2.000 1.000 0.000
+5 mutation parameters, l= -10.9136 AIC= 2585.6   Mut_par:  0.274 0.221 0.302 0.202 2.000 2.000 0.000
+WARNING, AIC increases, freezing the parameter
+5 mutation parameters, l= -10.0412 AIC= 2379.7   Mut_par:  0.270 0.215 0.302 0.212 2.000 1.000 0.050
+WARNING, AIC increases, freezing the parameter
+Optimal mutation parameters (DNA):
+4 mutation parameters, l= -10.0223 AIC= 2373.3   Mut_par:  0.271 0.218 0.302 0.208 2.000 1.000 0.000
+19 mutation parameters, l= -0.6381 AIC= 188.6   Mut_par:  0.065 0.069 0.022 0.063 0.018 0.099 0.106 0.057 0.047 0.073 0.072 0.043 0.054 0.040 0.013 0.029 0.039 0.002 0.032 0.057
+Likelihood computed from amino acid sequence 
+Obtaining mutation distribution from mutation model, ML fit plus amino acid sequence
+#AA:   	A	E	Q	D	N	L	G	K	S	V	R	T	P	I	M	F	Y	C	W	H
+#Pobs: 	0.065	0.069	0.022	0.063	0.018	0.099	0.106	0.057	0.047	0.073	0.072	0.043	0.054	0.040	0.013	0.029	0.039	0.002	0.032	0.057
+#Pmut: 	0.065	0.068	0.022	0.062	0.019	0.098	0.105	0.057	0.048	0.073	0.073	0.044	0.054	0.040	0.013	0.029	0.039	0.003	0.031	0.057
+#DP:   	0.000	0.001	-0.001	0.001	-0.000	0.001	0.000	0.000	-0.001	0.000	-0.001	-0.000	0.000	-0.000	-0.000	0.000	0.000	-0.001	0.000	0.001
+Mut_par: 	0.271	0.218	0.302	0.208	2	1	0
+Likelihood= -1183.08
