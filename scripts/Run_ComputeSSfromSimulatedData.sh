@@ -1,1 +1,0 @@
-perl ./scripts/ComputeSSfromSimulatedData.pl $1 $2 $3
