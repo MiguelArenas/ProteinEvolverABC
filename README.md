@@ -9,7 +9,7 @@ The package is implemented in C, perl and R and can run on Linux and Mac OS. It 
 
 The package includes detailed documentation (which is advised to read before using the program) and practical examples.
 
-o	The first version of this framework (now available from Releases) was supported by the Spanish Ministry of Economy and Competitiveness and Ministry of Science and Innovation through the Grants [RYC- 2015-18241] and [PID2019-107931GA-I00/AEI/10.13039/501100011033]. Arenas M. 2022. ProteinEvolverABC: Coestimation of Recombination and Substitution Rates in Protein Sequences by approximate Bayesian computation. Bioinformatics, 38(1), 58–64.
+o	The first version of this framework (now available from Releases, https://github.com/MiguelArenas/ProteinEvolverABC/releases) was supported by the Spanish Ministry of Economy and Competitiveness and Ministry of Science and Innovation through the Grants [RYC- 2015-18241] and [PID2019-107931GA-I00/AEI/10.13039/501100011033]. Arenas M. 2022. ProteinEvolverABC: Coestimation of Recombination and Substitution Rates in Protein Sequences by approximate Bayesian computation. Bioinformatics, 38(1), 58–64.
 
 o	The second (current) version of this framework was partially supported by the grants [PID2023-151032 NB-C21] and [PID2023-151032NB-C22] funded by the Spanish Ministry of Science MCIU/the Spanish Agency of Research AEI/10.13039/501100011033/ and FEDER, UE.
 
