@@ -1,1 +1,0 @@
-cat "./ArgumentsSS.txt" | xargs -n 6 "./scripts/Run_ComputeSSfromSimulatedData_STR.sh" 
