@@ -1,0 +1,42 @@
+Program Prot_evol, author Ugo Bastolla (CSIC-UAM) ubastolla@cbm.csic.es
+It simulates protein evolution with selection on the thermodynamic stability of the folded state and the conservation of the native structure and it computes site-specific substitution matrices (frequencies and exchangeability) according to different structure- and stability-constrained models of protein evolution. It optionally performs simulations of protein evolution with stability constraints and predicts the stability change of all possible DNA mutations.
+
+12 aligned sequences L_ali=289 read in RealData.fas
+PDB: 8C0G.pdb A DeltaG/T= -71.23 printed in file 8C0GA_DeltaG.dat
+Temperature with minimum DG: T=0.78
+Statistics of misfolded state printed in 8C0GA_Threading.dat
+DG= -71.23 E_nat= -148.1 G_misf= -76.9 G_unf= -18.98
+Writing DeltaG of multiple sequence alignment RealData.fas in RealData.fas.8C0GA.DeltaG
+12 stable and 0 unstable proteins found in RealData.fas Mean DG: -55.13
+unstable proteins will be eliminated for site-specific frequency and entropy computation
+# Structure that confers maximum stability to the MSA: 8C0GA (0) 12 stable seq. Mean DG: -55.13
+Drawing DNA sequence from AA sequence
+Regularization= 0(1-Mean(entropy)/ln(Naa))=0, Entr=0
+3 PDB positions have not been aligned: 0 290 291
+Target protein structure: 8C0GA 292 residues 289 structured 3 dis.
+289 MSA columns, 3 PDB residues have no associated column
+Stability model based on contact interactions, parameters:
+Temperature: 0.5
+Conformational entropy unfolded: 0.065 L
+Conformational entropy misfolded: 0.065 L + 0.000
+Misfolding model REM= 2
+Coefficient of secondary structure free energy: 0
+
+Average entropy of the MSA: 0.62
+Sequence entropy from alignment printed in 8C0GA_entropy.dat
+Mean hydroph. from alignment printed in 8C0GA_hydrophobicity.dat
+Summary results printed in file 8C0GA_SSCPE_summary.dat
+Stability and structure constrained (SSC) site-specific substitution processes
+# Global a.a. frequencies computed from mutation model optimized from the data
+# Nucleotide frequencies:  A 0.310 T 0.295 G 0.229 C 0.166 trasition-transversion ratio: 1.000 CpG ratio: 2.000Double nucleotide mutations: 0.050
+# Number of free parameters: 5+1
+Printing site-specific amino acid frequencies in 8C0GA_SSCPE_WT_AA_profiles.txt
+# Exchangeability such that Mean FLUX as JTT model
+Printing global exchangeability matrix of type JTT F in 8C0GA_SSCPE_WT_exchangeability_global_JTT_FLUX.txt
+Printing site-specific exchangeability matrices of type JTT F in 8C0GA_SSCPE_WT_exchangeability_sites_JTT_FLUX.txt
+Printing rates of all positions in 8C0GA_SSCPE_WT_rate_profile.dat
+
+Selection Models:
+Stability constrained:  wild-type (WT) DDG 
+
+Site-specific amino-acid frequencies and exchangeability matrices have been computed and printed
