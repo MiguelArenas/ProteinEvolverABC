@@ -1,0 +1,25 @@
+# PDB= "8C0GA" L_seq=292 DG_wt= -71.2 /L= -0.244 hydro= 0.139
+# 292 residues in PDB sequence, 289 structured 3 disordered
+# Loc.interactions: 0.000 T= 0.50 SC=0.065 SU= 0.065 REM= 2 T_freezing= 1.58
+# 12 stable aligned sequences read in file RealData.fas Mean DG: -55.13
+# PDB seq in MSA: 1
+# Mapping written in 8C0GA_RealData.map
+# Mean seq. identity between PDB seq and MSA: 0.566
+# 0 columns in MSA, 3 PDB res. do not have associated col.
+# MSA profiles regularized as f_ia=(n(MSA_ia)+REG*f_a)/N  initial REG=0.000
+# Entropy per site of the alignment: 0.616
+# Regularized entropy per site: nan
+# Lambda is obtained maximizing log(likelihood)-Reg*Lambda^2
+# Lambda determined by solving for zero derivative
+# Fix regularization parameter Reg = 0
+# KL(Reg.obs,mod): -likelihood(Reg|model)-Entropy(Reg)
+# KL(mod,Reg.obs): -likelihood(model|Reg)-Entropy(mod)
+# Global a.a. frequencies computed from mutation model optimized from the data
+# Nucleotide frequencies:  A 0.310 T 0.295 G 0.229 C 0.166 trasition-transversion ratio: 1.000 CpG ratio: 2.000Double nucleotide mutations: 0.050
+# Number of free parameters: 5+1
+# Adopted substitution matrix: JTT
+# Model Lambda0 Lambda1 lik(MSA) KL(mod,reg.obs) KL(reg.obs,mod) -score KL(mod,mut) entropy(mod) DG Tf h
+mut	0.0000	0.0000	-2.890	2.275	inf	inf	0.000	2.896	25.2	2.62	0.148
+WT	0.8403	0.0000	-2.744	2.129	inf	inf	0.146	2.720	-168.7	2.66	0.152
+# Optimal model:
+mut	1.0000	0.0000	-16.187	5.543	inf	inf	nan	1.216	-100.1	7.93	0.230
