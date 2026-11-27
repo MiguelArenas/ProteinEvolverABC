@@ -1,0 +1,66 @@
+#####################################################################
+#                                                                   #
+#         Parameters for the program Prot_evol                      #
+#                                                                   #
+#####################################################################
+#===================================================================
+# A) Input files defining the protein
+PDB=3P4H.pdb # file_pdb
+CHAIN=  A
+#SEQ=    tpis.dna    # file_seq (optional)
+ALI=RealData.fas # Related proteins in FASTA format
+FILE_STR=structures.in
+## B) Substitution models
+MEANFIELD= 1        # Generate substitution models?
+# Subst. models are generated based on folding stability, struct.
+# conservation and combination of both. Parameters are amino acid
+# frequencies and selection parameter Lambda, which is determined
+# minimizing the KL divergence between model and regularized
+# distribution from PDB seq and input MSA.
+OPT_REG=    ! Automatically determine the regularization param.
+SCORE_CV=1   ! Optimize REG with Cv (1) or |KL_mod-KL_reg| (0)
+REG=     ! regularization param. if OPT_REG=0, starting value if OPT_REG=1
+MF_COMP=1    ! Perform (1) or omit (0) mean-field computations of stability constrained model (slow), otherwise only wild-type computation is performed (faster and often better performing).
+#===================================================================
+# C)  Amino acid frequencies
+REMUT=0        # Determine a.a. freq twice, the first time
+# by fitting observed frequencies with a.a. frequencies alone,
+# the second time fitting observed frequencies with full model
+# that includes selection.
+GET_FREQ=2        # Allowed: 0,1,2,3
+# 0= Use input mutation parameters
+# 1= Fit mutation parameters from prot sequences
+# 2= Combine fitted mutation model and a.a. frequencies
+# 3= Get background distribution from amino acid frequencies
+# Parameters of the mutation model if GET_FREQ=0:
+FREQ A 0.25        # f(A) (if GET_FREQ=0)
+FREQ T 0.25        # f(T) (if GET_FREQ=0)
+FREQ C 0.25        # f(C) (if GET_FREQ=0)
+FREQ G 0.25        # f(G) (if GET_FREQ=0)
+kCpG=2        # # Enhanced rate at CpG dinucleotides
+TT_RATIO=1.3        # transition-transversion ratio (>1)
+TWONUCMUT=0.25        # Ratio between 1-nuc and 2-nuc mutations
+#===================================================================
+# D) Exchangeability matrix
+EXCHANGE=FLUX    # Allowed: FLUX (default), RATE, EXCH, MUT
+MATRIX=JTT        # Empirical exchange matrix (JTT, WAG)
+#===================================================================
+# E) Thermodynamic model
+TEMP=    0.5        # Temperature
+SU1=    0.065        # configurational entropy per residue (unfolded)
+SC1=    0.065        # configurational entropy per residue (misfolded)
+SC0=    0.0        # configurational entropy offset (misfolded)
+REM=    2 (1,2,3)    # Use up to 1,2,3 moments of misfolding energy?
+A_LOC=    0        # Use secondary structure propensities?
+#===================================================================
+# F) Computations and output
+PRINT_E=1        # Print exchangeability matrix at all sites?
+FORMAT=PAML        # Use PAML format for exchangeability matrix
+ALL_MUTS=0            # Predict the effect of all nucl. mut?
+#===================================================================
+# G) Simulations of evolution
+TMAX=   000        # ITMAX: # of substitutions
+Samples= 5        # Independent trajectories simulated
+NEUTRAL= 0        # 1:Neutral fitness landscape 0: Fitness=1/(1+exp(DG/T))
+NPOP=    10        # effective population size (if MEANFIELD=0, NEUTRAL=0)
+#===================================================================

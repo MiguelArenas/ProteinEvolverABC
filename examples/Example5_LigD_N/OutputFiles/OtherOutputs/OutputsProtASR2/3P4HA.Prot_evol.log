@@ -1,0 +1,37 @@
+Program Prot_evol, author Ugo Bastolla (CSIC-UAM) ubastolla@cbm.csic.es
+It simulates protein evolution with selection on the thermodynamic stability of the folded state and the conservation of the native structure and it computes site-specific substitution matrices (frequencies and exchangeability) according to different structure- and stability-constrained models of protein evolution. It optionally performs simulations of protein evolution with stability constraints and predicts the stability change of all possible DNA mutations.
+
+134 aligned sequences L_ali=108 read in RealData.fas
+PDB: 3P4H.pdb A DeltaG/T= -23.58 printed in file 3P4HA_DeltaG.dat
+Temperature with minimum DG: T=0.70
+Statistics of misfolded state printed in 3P4HA_Threading.dat
+DG= -23.58 E_nat= -48.29 G_misf= -24.71 G_unf= -7.67
+Writing DeltaG of multiple sequence alignment RealData.fas in RealData.fas.3P4HA.DeltaG
+134 stable and 0 unstable proteins found in RealData.fas Mean DG: -15.42
+unstable proteins will be eliminated for site-specific frequency and entropy computation
+# Structure that confers maximum stability to the MSA: 3P4HA (0) 134 stable seq. Mean DG: -15.42
+Drawing DNA sequence from AA sequence
+Regularization= 0(1-Mean(entropy)/ln(Naa))=0, Entr=0
+10 PDB positions have not been aligned: 108 109 110 111 112 113 114 115 116 117
+Target protein structure: 3P4HA 118 residues 108 structured 10 dis.
+108 MSA columns, 10 PDB residues have no associated column
+Stability model based on contact interactions, parameters:
+Temperature: 0.5
+Conformational entropy unfolded: 0.065 L
+Conformational entropy misfolded: 0.065 L + 0.000
+Misfolding model REM= 2
+Coefficient of secondary structure free energy: 0
+
+Average entropy of the MSA: 1.12
+Sequence entropy from alignment printed in 3P4HA_entropy.dat
+Mean hydroph. from alignment printed in 3P4HA_hydrophobicity.dat
+Summary results printed in file 3P4HA_SSCPE_summary.dat
+Stability and structure constrained (SSC) site-specific substitution processes
+# Global a.a. frequencies computed from mutation model optimized from the data
+# Nucleotide frequencies:  A 0.271 T 0.218 G 0.302 C 0.208 trasition-transversion ratio: 1.000 CpG ratio: 2.000Double nucleotide mutations: 0.000
+# Number of free parameters: 4+1
+Printing site-specific amino acid frequencies in 3P4HA_SSCPE_WT_AA_profiles.txt
+# Exchangeability such that Mean FLUX as JTT model
+Printing global exchangeability matrix of type JTT F in 3P4HA_SSCPE_WT_exchangeability_global_JTT_FLUX.txt
+Printing site-specific exchangeability matrices of type JTT F in 3P4HA_SSCPE_WT_exchangeability_sites_JTT_FLUX.txt
+Printing rates of all positions in 3P4HA_SSCPE_WT_rate_profile.dat
