@@ -1,0 +1,20 @@
+Basic installation is done by moving to the /src directory 
+and typing: 
+> make
+
+This creates the executables:
+
+Phi &  ppma_2_bmp
+
+For help type:
+
+> Phi
+
+To run on a fasta file type:
+
+> Phi -f filename.fasta
+
+See the file manual.pdf for further details.
+
+Email comments or questions to trevor@mcb.mcgill.ca
+See also: www.mcb.mcgill.ca/~trevor
